@@ -1,5 +1,7 @@
-import { Component, input, output } from '@angular/core';
-
+import { Component, input, output, inject } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { selectContador } from '../contador.selectors';
+import * as actions from '../contador.actions';
 @Component({
   selector: 'app-nieto',
   standalone: false,
@@ -7,9 +9,9 @@ import { Component, input, output } from '@angular/core';
   styleUrl: './nieto.scss',
 })
 export class Nieto {
-  contador = input<number>(0);
-  contadorChange = output<number>();
+  private store = inject(Store<{ contador: number }>);
+  contador = this.store.selectSignal(selectContador);
   reset() {
-    this.contadorChange.emit(0);
+    this.store.dispatch(actions.reset());
   }
 }
