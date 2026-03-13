@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Nieto } from './nieto';
+import { TodoFooter } from './todo-footer';
 
-describe('Nieto', () => {
-  let component: Nieto;
-  let fixture: ComponentFixture<Nieto>;
+describe('TodoFooter', () => {
+  let component: TodoFooter;
+  let fixture: ComponentFixture<TodoFooter>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [Nieto]
+      declarations: [TodoFooter]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Nieto);
+    fixture = TestBed.createComponent(TodoFooter);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
