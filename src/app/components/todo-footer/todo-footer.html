@@ -1,1 +1,21 @@
-<p>todo-footer works!</p>
+<footer class="todo-footer">
+  <div class="todo-count">
+    <strong> {{ pending() }} items left </strong>
+  </div>
+  <div class="todo-filters">
+    <button (click)="setFilter('all')" class="filter" [class.active]="filter() === 'all'">
+      All
+    </button>
+    <button (click)="setFilter('active')" class="filter" [class.active]="filter() === 'active'">
+      Active
+    </button>
+    <button
+      (click)="setFilter('completed')"
+      class="filter"
+      [class.active]="filter() === 'completed'"
+    >
+      Completed
+    </button>
+    <button (click)="clearCompleted()" class="filter">Clear Completed</button>
+  </div>
+</footer>

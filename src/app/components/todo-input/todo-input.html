@@ -1,1 +1,10 @@
-<p>todo-input works!</p>
+<div class="todo-input-container">
+  <input
+    [value]="text()"
+    (input)="text.set($event.target.value)"
+    class="todo-input"
+    type="text"
+    placeholder="What needs to be done?"
+  />
+  <button class="add-button" (click)="addTodo()">Add Todo</button>
+</div>

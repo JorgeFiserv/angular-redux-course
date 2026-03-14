@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
-
+import { todoReducer } from './store/todo.reducer';
 import { StoreModule } from '@ngrx/store';
 import { TodoInput } from './components/todo-input/todo-input';
 import { TodoList } from './components/todo-list/todo-list';
@@ -15,7 +15,7 @@ import { TodoFooter } from './components/todo-footer/todo-footer';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({ contador: () => 0 }),
+    StoreModule.forRoot({ todo: todoReducer }),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: !isDevMode(),

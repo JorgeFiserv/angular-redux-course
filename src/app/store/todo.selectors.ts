@@ -2,8 +2,10 @@ import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { TodoState } from '../models/todo.model';
 
 export const selectTodoState = createFeatureSelector<TodoState>('todo');
-
-export const selectTodos = createSelector(selectTodoState, (state) => state.todos);
+export const selectTodos = createSelector(
+  selectTodoState,
+  (state) => state.todos, // <-- deve ser array de Todo
+);
 export const selectFilter = createSelector(selectTodoState, (state) => state.filter);
 
 export const selectCompletedCount = createSelector(

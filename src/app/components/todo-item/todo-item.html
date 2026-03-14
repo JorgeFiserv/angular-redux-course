@@ -1,1 +1,9 @@
-<p>todo-item works!</p>
+<li class="todo-item">
+  <label>
+    <input type="checkbox" [checked]="todo().completed" (change)="toggle()" />
+    <span [style.textDecoration]="todo().completed ? 'line-through' : 'none'">
+      {{ todo().text }}
+    </span>
+  </label>
+  <button type="button" (click)="remove()">Excluir</button>
+</li>
